@@ -1,0 +1,668 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap");
+:root {
+  --yellow: #ffdf27;
+  --red: #a91d18;
+  --ink: #181512;
+  --cream: #f8f4ea;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "DM Sans", Arial, sans-serif;
+  overflow-x: hidden;
+}
+button,
+a {
+  font: inherit;
+  color: inherit;
+}
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.fixed-chrome {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.delivery {
+  height: 36px;
+  background: var(--red);
+  color: white;
+  text-align: center;
+  padding: 11px 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 11px;
+}
+header {
+  height: 93px;
+  background: var(--yellow);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 35px;
+  position: relative;
+}
+header svg {
+  width: 24px;
+  stroke-width: 1.4;
+}
+.header-side {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+.header-side.right {
+  justify-content: flex-end;
+}
+.logo {
+  height: 82px;
+  width: 110px;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
+.logo img {
+  width: 95px;
+  max-height: 80px;
+  object-fit: contain;
+}
+header nav {
+  position: absolute;
+  left: calc(50% + 92px);
+  display: flex;
+  gap: 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+header nav button {
+  padding: 8px 0;
+  border-bottom: 1px solid transparent;
+}
+header nav button:hover {
+  border-color: #000;
+}
+.bag {
+  position: relative;
+}
+.bag b {
+  position: absolute;
+  right: -7px;
+  top: -7px;
+  background: var(--red);
+  color: white;
+  border-radius: 50%;
+  font-size: 9px;
+  padding: 2px 5px;
+}
+main {
+  margin-top: 0;
+}
+.hero {
+  height: min(720px, calc(100vh - 129px));
+  min-height: 470px;
+  position: relative;
+  overflow: hidden;
+  background: #651c20;
+}
+.hero > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ticker {
+  background: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 11px 0;
+}
+.ticker div {
+  display: inline-block;
+  animation: marquee 23s linear infinite;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-45%);
+  }
+}
+.categories {
+  background: var(--yellow);
+  padding: 68px 4vw 82px;
+}
+.categories > h2 {
+  text-align: center;
+  font:
+    600 45px "Playfair Display",
+    serif;
+  margin: 0 0 38px;
+}
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.category {
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  text-align: left;
+  background: #573126;
+}
+.category:after {
+  content: "";
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(transparent, #000b);
+}
+.category img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s;
+}
+.category:hover img {
+  transform: scale(1.07);
+}
+.category div {
+  position: absolute;
+  z-index: 1;
+  bottom: 20px;
+  left: 20px;
+}
+.category h3 {
+  font:
+    500 31px "Playfair Display",
+    serif;
+  margin: 0 0 12px;
+}
+.category span,
+.pride button,
+.heritage button {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin: 0 0 17px;
+}
+.pride {
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  background: #561b20;
+  color: #fff;
+}
+.pride > img,
+.heritage > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pride > div {
+  padding: 11vw 9vw 7vw 7vw;
+}
+.pride h2,
+.heritage h2,
+.look h2 {
+  font:
+    600 clamp(42px, 4vw, 66px)/0.96 "Playfair Display",
+    serif;
+  margin: 0 0 25px;
+}
+.pride h2 i {
+  color: var(--yellow);
+}
+.pride > div > p:not(.eyebrow) {
+  line-height: 1.7;
+  font-size: 15px;
+  max-width: 390px;
+  margin-bottom: 32px;
+}
+.pride button {
+  color: var(--yellow);
+}
+.rail {
+  padding: 98px 4vw 68px;
+  overflow: hidden;
+}
+.rail-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 32px;
+}
+.rail h2 {
+  font:
+    600 clamp(30px, 3vw, 48px) "Playfair Display",
+    serif;
+  margin: 0;
+}
+.rail-head > button {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  border-bottom: 1px solid;
+  padding-bottom: 6px;
+  display: flex;
+  gap: 8px;
+}
+.product-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 64px) / 5);
+  gap: 16px;
+}
+.product-image {
+  height: 260px;
+  position: relative;
+  overflow: hidden;
+  background: #e6e1d8;
+}
+.product-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.product-card:hover img {
+  transform: scale(1.06);
+}
+.product-image span {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--red);
+  color: white;
+  padding: 5px 7px;
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: 0.09em;
+}
+.product-image button {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  background: white;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.product-image button:hover {
+  background: var(--yellow);
+}
+.product-image svg {
+  width: 18px;
+}
+.product-info h3 {
+  font-size: 14px;
+  margin: 13px 0 5px;
+}
+.product-info p {
+  font-size: 12px;
+  margin: 0;
+}
+.product-info s {
+  color: #777;
+  margin-left: 4px;
+}
+.discount {
+  text-align: center;
+  background: var(--red);
+  color: var(--yellow);
+  padding: 17px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+.look {
+  min-height: 590px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: white;
+}
+.look > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.look > div {
+  position: relative;
+  text-shadow: 0 2px 10px #111;
+}
+.look button {
+  background: var(--yellow);
+  padding: 14px 28px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  box-shadow: 3px 3px #0005;
+}
+.heritage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 620px;
+  background: #eee5d3;
+}
+.heritage > div {
+  padding: 10vw;
+}
+.heritage p:not(.eyebrow) {
+  line-height: 1.7;
+  font-size: 15px;
+}
+.heritage button {
+  margin-top: 30px;
+  border-bottom: 1px solid;
+  padding-bottom: 7px;
+}
+.values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
+  padding: 100px 7%;
+  background: #5a1d20;
+  color: white;
+}
+.values b {
+  font: 36px "Playfair Display";
+  color: var(--yellow);
+}
+.values h3 {
+  font: 500 26px/1.15 "Playfair Display";
+}
+.values p {
+  line-height: 1.6;
+  font-size: 14px;
+  opacity: 0.8;
+}
+footer {
+  background: var(--yellow);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr;
+  gap: 50px;
+  padding: 70px 7% 20px;
+}
+footer > img {
+  width: 125px;
+  max-height: 100px;
+  object-fit: contain;
+}
+footer h4 {
+  font: 600 21px "Playfair Display";
+  margin: 0 0 15px;
+}
+footer a {
+  display: block;
+  font-size: 13px;
+  margin: 8px 0;
+}
+footer p {
+  font-size: 14px;
+}
+footer form {
+  display: flex;
+  max-width: 330px;
+  border-bottom: 1px solid;
+}
+footer input {
+  background: none;
+  border: 0;
+  outline: 0;
+  padding: 12px 0;
+  width: 100%;
+}
+footer form button {
+  font-size: 11px;
+  font-weight: 700;
+}
+footer small {
+  grid-column: 1/-1;
+  border-top: 1px solid #0004;
+  padding-top: 17px;
+  font-size: 10px;
+}
+.collection-hero {
+  height: 390px;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.collection-hero:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #16060666;
+}
+.collection-hero img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.collection-hero div {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  text-shadow: 0 2px 10px #000;
+}
+.collection-hero h1 {
+  font: 600 clamp(50px, 7vw, 88px) "Playfair Display";
+  margin: 0 0 14px;
+}
+.collection-hero div > p:last-child {
+  margin: 0;
+  font-size: 15px;
+}
+.collection-products {
+  padding: 72px 5vw 100px;
+}
+.collection-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  border-bottom: 1px solid #c9c2b6;
+  padding-bottom: 23px;
+  margin-bottom: 34px;
+}
+.collection-title h2 {
+  font: 600 52px "Playfair Display";
+  margin: 0;
+}
+.collection-title p:last-child {
+  font-size: 13px;
+  margin: 9px 0 0;
+}
+.filter {
+  border: 1px solid #222;
+  padding: 12px 15px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 34px 18px;
+}
+.catalog-grid .product-image {
+  height: 330px;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: #0007;
+  display: grid;
+  place-items: start center;
+  padding-top: 150px;
+}
+.search-box {
+  width: min(720px, 92vw);
+  background: var(--cream);
+  padding: 45px;
+  position: relative;
+}
+.search-box > button {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+}
+.search-box h2,
+.cart h2 {
+  font: 500 34px "Playfair Display";
+  margin: 0 0 22px;
+}
+.search-box input {
+  width: 100%;
+  font: 17px "DM Sans";
+  padding: 16px 0;
+  border: 0;
+  border-bottom: 1px solid;
+  outline: 0;
+  background: none;
+}
+.suggestions {
+  font-size: 12px;
+  margin-top: 18px;
+  color: #666;
+}
+.menu-panel,
+.cart {
+  position: fixed;
+  z-index: 40;
+  top: 0;
+  bottom: 0;
+  background: var(--cream);
+  width: min(390px, 90vw);
+  padding: 28px;
+  box-shadow: 0 0 35px #0005;
+}
+.menu-panel {
+  left: 0;
+}
+.cart {
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+.menu-panel > button {
+  float: right;
+}
+.menu-panel p {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  margin-top: 60px;
+}
+.menu-panel button:not(:first-child) {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d8d0c0;
+  padding: 17px 0;
+  font: 500 21px "Playfair Display";
+}
+.cart-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+.cart h2 small {
+  font: 14px "DM Sans";
+}
+.cart-items {
+  overflow: auto;
+}
+.cart-line {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+}
+.cart-line img {
+  height: 66px;
+  width: 66px;
+  object-fit: cover;
+}
+.cart-line div {
+  flex: 1;
+}
+.cart-line b {
+  font-size: 13px;
+}
+.cart-line p {
+  font-size: 13px;
+  margin: 7px 0;
+}
+.cart-bottom {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid;
+}
+.cart-bottom p {
+  display: flex;
+  justify-content: space-between;
+}
+.cart-bottom > button {
+  width: 100%;
+  background: var(--red);
+  color: white;
+  padding: 15px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.cart-bottom small {
+  font-size: 10px;
+  display: block;
+  text-align: center;
+  padding-top: 10px;
+}
+.empty {
+  text-align: center;
+  margin: auto;
+  font: 24px "Playfair Display";
+}
+.empty button {
+  display: block;
+  margin: 20px auto;
+  color: var(--red);
+  font: 11px "DM Sans";
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}

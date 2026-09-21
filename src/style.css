@@ -1,0 +1,3 @@
+/* CSS entry point: global rules and responsive refinements are separated below. */
+@import "./styles/base.css";
+@import "./styles/responsive.css";
